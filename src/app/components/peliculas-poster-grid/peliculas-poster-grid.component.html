@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-3 mb-5 animate__animated animate__fadeIn" *ngFor="let movie of movies">
+    <img
+      [src]=" movie.poster_path | poster"
+      class="img-thumbnail img-fluid cursor" (click)="onMovieClick(movie)"
+    />
+    <div>
+      <h3 class="mt-2">{{ movie.title }}</h3>
+      <div class="row">
+        <div class="col-10 text-white">
+           <ngb-rating style="color: yellow" [rate]="movie.vote_average"></ngb-rating>
+        </div>
+        <div class="col-2 text-white">
+          {{ movie.vote_average | number:'1.1-2' }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
